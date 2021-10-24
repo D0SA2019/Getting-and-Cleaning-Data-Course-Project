@@ -7,7 +7,7 @@ rawDataDir <- "./rawData"
 rawDataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 rawDataFilename <- "rawData.zip"
 rawDataDFn <- paste(rawDataDir, "/", "rawData.zip", sep = "")
-dataDir <- "/Users/Falcon/Desktop/Getting and Cleaning Data Course Project/data"
+dataDir <- "/Users/Work/Desktop/Getting and Cleaning Data Course Project/data"
 
 if (!file.exists(rawDataDir)) {
   dir.create(rawDataDir)
@@ -65,6 +65,6 @@ allData$Subject <- as.factor(allData$Subject)
 meltedData <- melt(allData, id = c("Subject", "Activity"))
 tidyData <- dcast(meltedData, Subject + Activity ~ variable, mean)
 
-write.table(tidyData, "/Users/Falcon/Desktop/Getting and Cleaning Data Course Project/tidy_dataset.txt", row.names = FALSE, quote = FALSE)
+write.table(tidyData, "/Users/Work/Desktop/Getting and Cleaning Data Course Project/tidy_dataset.txt", row.names = FALSE, quote = FALSE)
 
 
